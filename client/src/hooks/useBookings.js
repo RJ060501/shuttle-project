@@ -45,7 +45,7 @@ function useBookings(onSuccessSound, onAbortSound, onFailureSound) {
     } else {
       onFailureSound();
     }
-  }, [getLaunches, onSuccessSound, onFailureSound]);
+  }, [getBookings, onSuccessSound, onFailureSound]);
 
   const abortBooking = useCallback(async (id) => {
     const response = await httpAbortBooking(id);

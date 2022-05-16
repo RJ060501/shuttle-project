@@ -2,7 +2,7 @@ import {
     useState,
   } from "react";
   import {
-    Switch,
+    Routes,
     Route,
   } from "react-router-dom";
   import {
@@ -58,15 +58,15 @@ import {
     } = useBookings(onSuccessSound, onAbortSound, onFailureSound);
     
     return <div className={classes.content}>
-      <Header onNav={animateFrame} />
-      <Centered className={classes.centered}>
+      {/* <Header onNav={animateFrame} /> */}
+      {/* <Centered className={classes.centered}> */}
         <Frame animate 
           show={frameVisible} 
           corners={4} 
           style={{visibility: frameVisible ? "visible" : "hidden"}}>
           {anim => (
             <div style={{padding: "20px"}}>
-            <Switch>
+            <Routes>
               <Route exact path="/">
                 <Book
                   entered={anim.entered}
@@ -88,12 +88,12 @@ import {
               <Route exact path="/history">
                 <History entered={anim.entered} bookings={bookings} />
               </Route> */}
-            </Switch>
+            </Routes>
             </div>
           )}
         </Frame>
-      </Centered>
-      <Footer />
+      {/* </Centered> */}
+      {/* <Footer /> */}
     </div>;
   };
   
